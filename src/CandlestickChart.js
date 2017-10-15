@@ -12,7 +12,8 @@ export class CandlestickChart extends Component {
     }
 
     componentDidMount() {
-        this.setChart();
+        let candlestickChart = new this.props.google.visualization.CandlestickChart(document.getElementById("chart-1"));
+        this.setState({chart: candlestickChart});
     }
 
     render() {
@@ -21,11 +22,6 @@ export class CandlestickChart extends Component {
                 Loading chart...
             </div>
         );
-    }
-
-    setChart() {
-        let candlestickChart = new this.props.google.visualization.CandlestickChart(document.getElementById("chart-1"));
-        this.setState({chart: candlestickChart});
     }
 
     drawChart() {
