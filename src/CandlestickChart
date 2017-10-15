@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ScriptCache from './ScriptCache.js';
+import {Component} from "react/cjs/react.production.min";
 
-class App extends Component {
+class CandlestickChart extends Component {
+
+    constructor(props) {
+        super(pops);
+    }
 
     componentDidMount() {
         this.scriptCache = ScriptCache({
@@ -31,21 +32,4 @@ class App extends Component {
             }
         });
     };
-
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-                <div id="chart-1"/>
-            </div>
-        );
-    }
 }
-
-export default App;
