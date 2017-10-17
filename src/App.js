@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ScriptCache from './ScriptCache.js';
-import {CandlestickChart} from "./CandlestickChart.js";
+import {Chart} from "./Chart.js";
 
 class App extends Component {
 
@@ -38,9 +38,9 @@ class App extends Component {
     render() {
         if (this.state.chartsLoaded) {
             return (
-                <CandlestickChart
-                    google={window.google}
-                    dataTable={this.state.dataTable}
+                <Chart
+                    chartConstructor={window.google.visualization.CandlestickChart}
+                    dataTable={window.google.visualization.arrayToDataTable(this.state.dataTable, true)}
                     options={this.state.options}
                 />
             )
